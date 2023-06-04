@@ -17,7 +17,13 @@ const peerServer = ExpressPeerServer(server, {
     key: 'peerjs',
 });
 
+
+
 app.use('/peerjs', peerServer);
+
+app.get('/', function(req,res){
+    res.send('Running PeerServer on port: '+port)
+})
 
 // //on conect 
 // peerServer.on('connection', (client) => {
