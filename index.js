@@ -1,8 +1,11 @@
 const express = require('express');
-const app = express();
 const {ExpressPeerServer} = require('peer');
+const app = express();
+const cors = require('cors');
 
 app.enable('trust proxy');
+// Configurar CORS
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
