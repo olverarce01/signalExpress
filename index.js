@@ -15,6 +15,8 @@ const peerServer = ExpressPeerServer(server, {
     debug: true,
     path: '/myapp',
     key: 'peerjs',
+    //alow discovery
+    allow_discovery: true,
 });
 
 app.use('/peerjs', peerServer);
